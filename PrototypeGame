@@ -1,0 +1,152 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int karakter;
+    int pilihan;
+    int senjata;
+    int panah;
+    int pedang;
+    int health = 100;
+
+#define RESET "\033[0m"
+#define BLACK "\033[30m"    /* Warna hitam */
+#define RED "\033[31m"      /* Warna merah */
+#define GREEN "\033[32m"    /* Warna hijau */
+#define YELLOW "\033[33m"   /* Warna kuning */
+#define BLUE "\033[34m"     /* Warna biru */
+#define MAGENTA "\033[35m"  /* Warna ungu */
+#define CYAN "\033[36m"     /* Warna cyan */
+#define WHITE "\033[37m"    /* Warna putih */
+#define BOLD "\033[1m"      /* Huruf tebal */
+#define UNDERLINE "\033[4m" /* Huruf bergaris bawah */
+
+    cout << endl;
+    cout << CYAN << "======================================" << RESET << endl;
+    cout << YELLOW << "||" << RESET << "           " << BOLD << "Bekasi Warior" << RESET << "          " << YELLOW << "||" << RESET << endl;
+    cout << CYAN << "======================================" << RESET << endl
+         << endl;
+    cout << CYAN << "======================================" << RESET << endl;
+    cout << YELLOW << "||" << RESET << "              " << BOLD << "Karakter" << RESET << "            " << YELLOW << "||" << RESET << endl;
+    cout << CYAN << "======================================" << RESET << endl;
+    cout << YELLOW << "||" << RESET << RED << "1. Ksatria" << RESET << "                        " << YELLOW << "||" << RESET << endl;
+    cout << YELLOW << "||" << RESET << BLUE << "2. Pemanah" << RESET << "                        " << YELLOW << "||" << RESET << endl;
+    cout << YELLOW << "||" << RESET << GREEN << "3. Medis" << RESET << "                          " << YELLOW << "||" << RESET << endl;
+    cout << CYAN << "======================================" << RESET << endl;
+    cout << "pilih karakter yang kamu inginkan : ";
+    cin >> karakter;
+    cout << endl;
+
+    switch (karakter)
+    {
+    case 1:
+        cout << RED << "================< Kamu Ksatria >================" << RESET << endl;
+        break;
+    case 2:
+        cout << BLUE << "================< Kamu Pemanah >================" << RESET << endl;
+        break;
+    case 3:
+        cout << GREEN << "================< Kamu Medis >================" << RESET << endl;
+        break;
+    default:
+        cout << "Pilihan tidak valid." << endl;
+        return 0;
+    }
+
+    do
+    {
+        cout << "\nPilihan tindakan :" << endl;
+        cout << "1. Serang     " << RED << BOLD << "( -5 HP)" << RESET << endl;
+        cout << "2. Memulihkan " << GREEN << BOLD << "( +5 HP)" << RESET << endl;
+        cout << "3. Beli Senjata" << endl;
+        cout << "Pilihan: ";
+        cin >> pilihan;
+
+        switch (pilihan)
+        {
+        case 1:
+            health -= 5;
+            cout << endl;
+            cout << BOLD << YELLOW << "Tepat Sasaran!" << RESET << " HP Musuh sekarang : " << health << endl;
+            break;
+        case 2:
+            health += 5;
+            cout << endl;
+            cout << BOLD << GREEN << "Anda berhasil memulihkan diri" << RESET << ". HP Anda sekarang: " << health << endl;
+            break;
+        case 3:
+            cout << endl;
+            cout << CYAN << "==========================" << RESET << endl;
+            cout << YELLOW << "||" << RESET << "     List senjata  " << YELLOW << "   ||" << RESET << endl;
+            cout << CYAN << "==========================" << RESET << endl;
+            cout << YELLOW << "||" << RESET << "1. Panah" << YELLOW << "              ||" << RESET << endl;
+            cout << YELLOW << "||" << RESET << "2. Pedang" << YELLOW << "             ||" << RESET << endl;
+            cout << CYAN << "==========================" << RESET << endl;
+            cout << "Pilihan senjata: ";
+            cin >> senjata;
+            switch (senjata)
+            {
+            case 1:
+                cout << endl;
+                cout << BOLD <<  "Senjata" << MAGENTA << " PANAH TERPILIH !! " << RESET << endl;
+                cout << "\nPilihan tindakan:" << endl;
+                cout << "1. Serang     "<< RED << BOLD << "( - 15 HP )" << RESET << endl;
+                cout << "2. Memulihkan " << GREEN << BOLD << "( + 10 HP )" << RESET << endl;
+                cout << "Pilihan: ";
+                cin >> panah;
+
+                switch (panah)
+                {
+                case 1:
+                    health -= 15;
+                    cout << endl;
+                    cout << BOLD << YELLOW << "Tepat Sasaran!" << RESET << " HP Musuh sekarang : " << health << endl;
+                    break;
+                case 2:
+                    health += 10;
+                    cout << endl;
+                    cout << BOLD << GREEN << "Anda berhasil memulihkan" << RESET << ", HP sekarang: " << health << endl;
+                    break;
+                }
+            break;
+            case 2:
+                cout << endl;
+                cout << BOLD <<  "Senjata" << CYAN << " PEDANG TERPILIH !! " << RESET << endl;
+                cout << "\nPilihan tindakan:" << endl;
+                cout << "1. Serang     " << RED << BOLD "( -20 HP )" << RESET << endl;
+                cout << "2. Memulihkan " << GREEN << BOLD << "( +15 HP )" << RESET<< endl;
+                cout << "Pilihan: ";
+                cin >> pedang;
+
+                switch (pedang)
+                {
+                case 1:
+                    health -= 20;
+                    cout << endl;
+                    cout << BOLD << YELLOW << "Tepat Sasaran!" << RESET << " HP Musuh sekarang : " << health << endl;
+                    break;
+                case 2:
+                    health += 15;
+                    cout << endl;
+                    cout << BOLD << GREEN << "Anda berhasil memulihkan" << RESET << ", HP sekarang: " << health << endl;
+                    break;
+                }
+            break;
+                default:
+                    cout << "Pilihan senjata tidak valid." << endl;
+                }
+                break;
+            default:
+                cout << "Pilihan tidak valid." << endl;
+            }
+        }
+        while (health > 0)
+            ;
+        
+        cout << endl;
+        cout << RED << "        Game selesai !!" << RESET << endl << "Terima kasih telah bermain" << endl << endl;
+
+        return 0;
+    }
