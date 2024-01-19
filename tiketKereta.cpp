@@ -78,7 +78,7 @@ int main()
     cout << nama << "         "
          << "-< kelas : " << Jenis << " >- " << endl;
     cout << endl;
-    cout << asal << " ----------------> " << tujuan << endl;
+    cout << "Stasiun " << asal << " ----------------> " << "Stasiun " << tujuan << endl;
     cout << endl;
 
     cout << "Jumlah penumpang : " << jumlah_penumpang << " Orang" << endl;
@@ -92,7 +92,7 @@ int main()
     cout << "Apakah Anda Ingin Memesan Tiket Kembali? : ";
     char choice;
     cin >> choice;
-    repeat = (choice == 'iya' || choice == 'Y');
+    repeat = (choice == 'Y' || choice == 'y');
   } while (repeat);
 
   return 0;
