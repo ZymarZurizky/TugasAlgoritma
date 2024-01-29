@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 #define RESET "\033[0m"
@@ -137,7 +138,7 @@ void KonversiNilaiKeHuruf()
     // Output hasil konversi
     cout << "Nilai huruf Anda adalah : " << grade << endl;
 
-    // Menentukan kelulusan
+    // Menentukan keluzymlusan
     if (grade >= 'A' && grade <= 'C')
     {
         cout << "Anda" << NEON_GREEN << " LULUS\n"
@@ -174,13 +175,13 @@ void MenghitungUangPecahan()
     switch (pilihan)
     {
     case 1:
-        cout << "Masukkan Uang Yang Anda Inginkan : Rp. ";
+        cout << "Masukkan Uang Yang Anda Inginkan : " << GREEN << "Rp" << RESET << ". ";
         break;
     case 2:
-        cout << "Masukkan Uang Yang Anda Inginkan : $";
+        cout << "Masukkan Uang Yang Anda Inginkan : " << GREEN << "$" << RESET;
         break;
     case 3:
-        cout << "Masukkan Uang Yang Anda Inginkan : €";
+        cout << "Masukkan Uang Yang Anda Inginkan : " << YELLOW << "€" << RESET;
         break;
     default:
         cout << "Pilihan mata uang tidak valid.\n";
